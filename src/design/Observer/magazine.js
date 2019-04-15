@@ -66,3 +66,15 @@ paper.daily();
 paper.daily();
 paper.daily();
 paper.monthly();
+
+makePublisher(joe);
+joe.tweet = function (msg) {
+  this.publish(msg);
+};
+
+paper.readTweets = function (tweet) {
+  console.log(`Call big meeting! Someone ${tweet}`);
+};
+joe.subscribe(paper.readTweets);
+
+joe.tweet(`hate the paper today`);
